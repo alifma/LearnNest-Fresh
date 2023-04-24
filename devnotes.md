@@ -20,7 +20,7 @@
 - test: Testfile, tempat menyimpan kode testing, tapi kalau UT sih pakai yang lainnya
 - app.module.ts: app.ts kalau di react, file utama dari aplikasi
 
-### Module
+### Module 
 - Module diawali dengan @Module
 - Module itu bisa import modul lainnya, app.module.ts itu file module utamanya. Biasanya modul dibuat perfeature 'Feature Module'
 - start:dev ini pakai seperti watchman, akan restart setiap terubah
@@ -38,3 +38,9 @@
 - Setelah buat services, maka controllernya harus didefinisikan sebagai provider di module
 
 ## Koneksi ke database
+- Docker-compose: resep docker yang bisa untuk langsung dijalankan, tanpa perlu setup database di lokal, bisa perkontainer aja 
+- Prisma; salah satu pilihan ORM, cukup handle di satu tempat aja untuk digunakan dimana-mana
+  - init : initialize project to use prisma
+  - studio: membuka prisma studio
+  - migrate dev: generate migration 
+- Sebelum module import, maka harus perlu di export dulu

@@ -1,11 +1,13 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
 // Tempat menyimpan bisnis logic
 @Injectable({})
-export class AuthService{
-  signin(){
-    return {msg: 'I have signin'}
+export class AuthService {
+  constructor(private prisma: PrismaService) {}
+  signup() {
+    return { msg: 'I have signup' };
   }
-  signup(){
-    return {msg: 'I have signup'}
+  signin() {
+    return { msg: 'I have signin' };
   }
 }
