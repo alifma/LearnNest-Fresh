@@ -16,12 +16,16 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  email String
+  email String @unique
   hash String
 
   firstName String?
   lastName String?
+  
+  bookmarks Bookmark[]
 
+  // @@map itu buat rename table
+  @@map("users")
 }
 
 model Bookmark {
@@ -32,4 +36,10 @@ model Bookmark {
   title String
   description String?
   link String
+
+  userId Int
+  // Relasi  many to one, many bookmark bisa dimiliki satu user
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("bookmarks")
 }

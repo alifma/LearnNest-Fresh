@@ -44,3 +44,5 @@
   - studio: membuka prisma studio
   - migrate dev: generate migration 
 - Sebelum module import, maka harus perlu di export dulu
+- DTO: Data Type Object
+- Pipe: Fungsi yang mengkonversi data

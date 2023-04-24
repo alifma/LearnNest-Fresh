@@ -1,5 +1,6 @@
-import { Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { AuthDto } from './auth.dto';
 // Tempat handling request http
 // pemberian auth disini berarti nanti semua endpoint yang diexport dari module ini ada prefix 'auth' didepannya
 @Controller('auth')
@@ -9,7 +10,7 @@ export class AuthController {
 
   // handling for /auth/signup
   @Post('signup')
-  signup() {
+  signup(@Body() dto: AuthDto) {
     /**
      *  bentuk balikannya akan ditentukan oleh nestjs
      *  misalkan seperti
@@ -19,7 +20,7 @@ export class AuthController {
      * return {msg: 'i am signup'}
      * balikannya akan object
      */
-    return this.authService.signup();
+    return this.authService.signup(dto);
   }
 
   // handling for /auth/signin
