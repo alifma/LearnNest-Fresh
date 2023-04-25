@@ -1,6 +1,6 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { AuthDto } from './auth.dto';
+import { AuthDto } from './dto/auth.dto';
 // Tempat handling request http
 // pemberian auth disini berarti nanti semua endpoint yang diexport dari module ini ada prefix 'auth' didepannya
 @Controller('auth')
