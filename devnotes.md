@@ -44,5 +44,21 @@
   - studio: membuka prisma studio
   - migrate dev: generate migration 
 - Sebelum module import, maka harus perlu di export dulu
-- DTO: Data Type Object
+
+## Other
+- DTO: Data Type Object, data type object ini untuk memvalidasi bentuk data yang dikirimnya, validasinya ada berbagai macam, diantaranya:
+  - @IsNotEmpty
+  - @IsNumber
+  - @IsEmail
 - Pipe: Fungsi yang mengkonversi data
+
+
+## JWT
+- JWT atau json web token digunakan untuk melakukan pengecekan keamanan pada server, jadi nanti setiap rerquest yang dikirimkan oleh use rritu akan menggunakan header berisi authentication berer token (depannya ada 'Bearer '+jwtToken)
+- JWT token ini ada secretnya, secret berguna untuk memastikan bahwa data tersebut sudah disign oleh server kita atau bukan
+- JWT paqda user didapatkan ketika tahapan login
+- Untuk memverifikasi sebuah JWT digunakan passport dengan strategy passport-jwt
+
+## Decorator & Auth Guard
+- Karena sudah menggunakan authguard dan passport jadi ketika sebuah route mau diberikan secrity akses misal berdasarkan token jwt, maka tinggal dipanggil strategynya saja
+- Decorator itu adalah fungsi yang sering dipanggil dan mengembalikan suatu hal tertentu, mungkin 11 12 sama helper ya jadinya (?)
